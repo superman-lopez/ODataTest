@@ -30,7 +30,7 @@ namespace ODataTest.Controllers
 		{
 			List<Blog> blogs = await dbContext.Blogs
 				.AsNoTracking()
-				// .Include(b => b.Posts)
+				.Include(b => b.Posts)
 				.ToListAsync();
 
 			// List<BlogResource> blogsResource = mapper.Map<List<Blog>, List<BlogResource>>(blogs);
@@ -45,7 +45,7 @@ namespace ODataTest.Controllers
 		{
 			List<Blog> blogs = await dbContext.Blogs
 				.AsNoTracking()
-				// .Include(b => b.Posts)
+				.Include(b => b.Posts)
 				.ToListAsync();
 
 			// List<BlogResource> blogsResource = mapper.Map<List<Blog>, List<BlogResource>>(blogs);
