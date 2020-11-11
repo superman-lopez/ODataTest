@@ -65,7 +65,6 @@ namespace ODataTest
             //     endpoints.MapControllers();
             // });
 
-
 			app.UseMvc(builder =>
             {
                 builder.EnableDependencyInjection();

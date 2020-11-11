@@ -26,12 +26,11 @@ namespace ODataTest.Controllers
 		[EnableQuery()]
 		// [HttpGet("unauthenticated")]
 		[HttpGet]
-		public async Task<IActionResult> GetAllResultsUnauthenticated()
+		public IActionResult GetAllResultsUnauthenticated()
 		{
-			List<Blog> blogs = await dbContext.Blogs
+			var blogs = dbContext.Blogs
 				.AsNoTracking()
-				.Include(b => b.Posts)
-				.ToListAsync();
+				.Include(b => b.Posts);
 
 			// List<BlogResource> blogsResource = mapper.Map<List<Blog>, List<BlogResource>>(blogs);
 
