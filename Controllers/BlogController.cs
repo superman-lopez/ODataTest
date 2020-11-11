@@ -10,7 +10,7 @@ using ODataTest.Persistence;
 
 namespace ODataTest.Controllers
 {
-	[Route("api/")]
+	// [Route("api/")]
     public class BlogController : ODataController
     {
 		private readonly ODataContext dbContext;
@@ -24,7 +24,8 @@ namespace ODataTest.Controllers
 
 		// [AllowAnonymous]
 		[EnableQuery()]
-		[HttpGet("unauthenticated")]
+		// [HttpGet("unauthenticated")]
+		[HttpGet]
 		public async Task<IActionResult> GetAllResultsUnauthenticated()
 		{
 			List<Blog> blogs = await dbContext.Blogs
@@ -38,19 +39,19 @@ namespace ODataTest.Controllers
 		}
 
 		// [Authorize]
-		[EnableQuery()]
-		[HttpGet("authenticated")]
-		public async Task<IActionResult> GetAllResultsAuthenticated()
-		{
-			List<Blog> blogs = await dbContext.Blogs
-				.AsNoTracking()
-				.Include(b => b.Posts)
-				.ToListAsync();
+		// [EnableQuery()]
+		// [HttpGet("authenticated")]
+		// public async Task<IActionResult> GetAllResultsAuthenticated()
+		// {
+		// 	List<Blog> blogs = await dbContext.Blogs
+		// 		.AsNoTracking()
+		// 		.Include(b => b.Posts)
+		// 		.ToListAsync();
 
-			List<BlogResource> blogsResource = mapper.Map<List<Blog>, List<BlogResource>>(blogs);
+		// 	List<BlogResource> blogsResource = mapper.Map<List<Blog>, List<BlogResource>>(blogs);
 
-			return Ok(blogsResource);
-		}
+		// 	return Ok(blogsResource);
+		// }
 
     }
 }
