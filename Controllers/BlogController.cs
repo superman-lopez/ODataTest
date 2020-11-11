@@ -12,7 +12,7 @@ namespace ODataTest.Controllers
 {
     [ApiController]
 	[Route("api/")]
-    public class BlogController : ControllerBase
+    public class BlogController : ODataController
     {
 		private readonly ODataContext dbContext;
 		private readonly IMapper mapper;
