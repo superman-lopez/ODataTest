@@ -25,7 +25,7 @@ namespace ODataTest.Controllers
 		// [AllowAnonymous]
 		[EnableQuery()]
 		// [HttpGet("unauthenticated")]
-		[HttpGet]
+		[HttpGet("Blogs")]
 		public IActionResult GetAllResultsUnauthenticated()
 		{
 			var blogs = dbContext.Blogs
