@@ -10,7 +10,7 @@ using ODataTest.Persistence;
 
 namespace ODataTest.Controllers
 {
-    [ApiController]
+    // [ApiController]
 	[Route("api/")]
     public class BlogController : ODataController
     {
