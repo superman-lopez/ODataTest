@@ -22,6 +22,7 @@ namespace ODataTest.Controllers
 			this.mapper = mapper;
 		}
 
+		// Blogs specific endpoint
 		// [AllowAnonymous]
 		[EnableQuery()]
 		// [HttpGet("unauthenticated")]
