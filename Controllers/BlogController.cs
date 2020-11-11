@@ -33,9 +33,9 @@ namespace ODataTest.Controllers
 				.Include(b => b.Posts)
 				.ToListAsync();
 
-			List<BlogResource> blogsResource = mapper.Map<List<Blog>, List<BlogResource>>(blogs);
+			// List<BlogResource> blogsResource = mapper.Map<List<Blog>, List<BlogResource>>(blogs);
 
-			return Ok(blogsResource);
+			return Ok(blogs);
 		}
 
 		// [Authorize]
